@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="true"/>
+	<list key="searchhistory">
+		<item value="_EN"/>
+		<item value="DCKCFGR"/>
+		<item value="|= ("/>
+		<item value="EN"/>
+		<item value="enable"/>
+		<item value="spi6"/>
+		<item value="SYSCFG"/>
+		<item value="RCC_"/>
+		<item value="APB1_PHERIPH_BASEADDR"/>
+	</list>
+	<list key="replacehistory">
+		<item value="_DI"/>
+		<item value="&amp;= ~("/>
+		<item value="DI"/>
+		<item value="disable"/>
+	</list>
+</section>

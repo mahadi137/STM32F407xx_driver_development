@@ -1,0 +1,60 @@
+/*
+ * stm32f4xx.h
+ *
+ *  Created on: 21 __Dec__ 2025
+ *      Author: __Sayad__ __Hassan__
+ */
+
+#ifndef INC_STM32F407XX_H_
+#define INC_STM32F407XX_H_
+
+#define FLASH_BASEADDR				0x08000000U			/* Base address of Main Memory (Flash memory)(up to 1MB) */
+#define SRAM1_BASEADDR				0x20000000U			/* Base address of SRAM1 (112KB) */
+#define SRAM2_BASEADDR				0x2001C000U			/* Base address of SRAM2 (16KB) - after SRAM1 */
+#define SRAM_BASEADDR				SRAM1_BASEADDR		/* Default SRAM base address points to SRAM1 */
+#define ROM_BASEADDR				0x1FFF0000U			/* Base address of System Memory (ROM) */
+
+/*
+ *  AHBx and APBx Bus Peripheral base addresses
+ */
+
+#define PHERIPH_BASEADDR			0x40000000U
+#define APB1_PHERIPH_BASEADDR		PHERIPH_BASEADDR
+#define APB2_PHERIPH_BASEADDR		0x40010000U
+#define AHB1_PHERIPH_BASEADDR		0x40020000U
+#define AHB2_PHERIPH_BASEADDR		0x50000000U
+#define AHB3_PHERIPH_BASEADDR		0xA0000000U
+
+/*
+ * Base addresses of peripherals which are hanging on AHB1 bus
+ */
+
+#define GPIOA						(AHB1_PHERIPH_BASEADDR + 0x0000)
+#define GPIOB						(AHB1_PHERIPH_BASEADDR + 0x0400)
+#define GPIOC						(AHB1_PHERIPH_BASEADDR + 0x0800)
+#define GPIOD						(AHB1_PHERIPH_BASEADDR + 0x0C00)
+#define GPIOE						(AHB1_PHERIPH_BASEADDR + 0x1000)
+#define GPIOF						(AHB1_PHERIPH_BASEADDR + 0x1400)
+#define GPIOG						(AHB1_PHERIPH_BASEADDR + 0x1800)
+#define GPIOH						(AHB1_PHERIPH_BASEADDR + 0x1C00)
+#define GPIOI						(AHB1_PHERIPH_BASEADDR + 0x2000)
+#define GPIOJ						(AHB1_PHERIPH_BASEADDR + 0x2400)
+#define GPIOK						(AHB1_PHERIPH_BASEADDR + 0x2800)
+
+/*
+ * Base addresses of peripherals which are hanging on AHB1 bus
+ */
+
+#define GPIOA						(AHB1_PHERIPH_BASEADDR + 0x0000)
+#define GPIOB						(AHB1_PHERIPH_BASEADDR + 0x0400)
+#define GPIOC						(AHB1_PHERIPH_BASEADDR + 0x0800)
+#define GPIOD						(AHB1_PHERIPH_BASEADDR + 0x0C00)
+#define GPIOE						(AHB1_PHERIPH_BASEADDR + 0x1000)
+#define GPIOF						(AHB1_PHERIPH_BASEADDR + 0x1400)
+#define GPIOG						(AHB1_PHERIPH_BASEADDR + 0x1800)
+#define GPIOH						(AHB1_PHERIPH_BASEADDR + 0x1C00)
+#define GPIOI						(AHB1_PHERIPH_BASEADDR + 0x2000)
+#define GPIOJ						(AHB1_PHERIPH_BASEADDR + 0x2400)
+#define GPIOK						(AHB1_PHERIPH_BASEADDR + 0x2800)
+
+#endif /* INC_STM32F407XX_H_ */

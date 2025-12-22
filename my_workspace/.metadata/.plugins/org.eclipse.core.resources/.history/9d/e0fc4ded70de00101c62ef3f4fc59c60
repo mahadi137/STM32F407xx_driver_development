@@ -1,0 +1,29 @@
+/*
+ * stm32f4xx.h
+ *
+ *  Created on: 21 __Dec__ 2025
+ *      Author: __Sayad__ __Hassan__
+ */
+
+#ifndef INC_STM32F407XX_H_
+#define INC_STM32F407XX_H_
+
+#define FLASH_BASEADDR				0x08000000U			/* Base address of Main Memory (Flash memory)(up to 1MB) */
+#define SRAM1_BASEADDR				0x20000000U			/* Base address of SRAM1 (112KB) */
+#define SRAM2_BASEADDR				0x2001C000U			/* Base address of SRAM2 (16KB) - after SRAM1 */
+#define SRAM_BASEADDR				SRAM1_BASEADDR		/* Default SRAM base address points to SRAM1 */
+#define ROM_BASEADDR				0x1FFF0000U			/* Base address of System Memory (ROM) */
+
+/*
+*
+*/
+
+#define PHERIPH_BASEADDR			0x40000000U
+#define APB1_PHERIPH_BASEADDR		PHERIPH_BASEADDR
+#define APB2_PHERIPH_BASEADDR		0x40010000U
+#define AHB1_PHERIPH_BASEADDR		0x40020000U
+#define AHB2_PHERIPH_BASEADDR		0x50000000U
+#define AHB3_PHERIPH_BASEADDR		0xA0000000U
+
+
+#endif /* INC_STM32F407XX_H_ */
