@@ -158,6 +158,7 @@ typedef struct
 	volatile uint32_t PLLI2SCFGR;		/* PLLI2S configuration register, 						Address Offset: 0x84 */
 	volatile uint32_t PLLSAICFGR;		/* PLLSAI configuration register, 						Address Offset: 0x88 */
 	volatile uint32_t DCKCFGR;			/* Dedicated clocks configuration register, 			Address Offset: 0x8C */
+} RCC_RegDef_t;
 
 
 /*
@@ -282,10 +283,41 @@ typedef struct
  *  Clock disable macros for SYSCFG peripherals
  */
 
-#define SYSCFG_PCLK_EN()			( RCC->APB2ENR &= ~(1 << 14) )
+#define SYSCFG_PCLK_DI()			( RCC->APB2ENR &= ~(1 << 14) )
+
+
+/*
+ * Macros to reset GPIOx peripherals
+ */
+
+// ref @RCC AHB1 peripheral clock register (RCC_AHB1ENR) in reference manual
+// first: set to RESET, second: reset to previous to prevent continuous reset operation
+
+#define GPIO_REG_RESET()			do{( RCC->AHB1ENR |= (1 << 0); ( RCC->AHB1ENR &= ~(1 << 0); )} while(0)
+									// “do while condition is zero” loop
+									// Keep looping while a variable equals 0
+									// This runs only once
+
+#define GPIOB_REG_RESET()               do{ (RCC->AHB1RSTR |= (1 << 1)); (RCC->AHB1RSTR &= ~(1 << 1)); }while(0)
+#define GPIOC_REG_RESET()               do{ (RCC->AHB1RSTR |= (1 << 2)); (RCC->AHB1RSTR &= ~(1 << 2)); }while(0)
+#define GPIOD_REG_RESET()               do{ (RCC->AHB1RSTR |= (1 << 3)); (RCC->AHB1RSTR &= ~(1 << 3)); }while(0)
+#define GPIOE_REG_RESET()               do{ (RCC->AHB1RSTR |= (1 << 4)); (RCC->AHB1RSTR &= ~(1 << 4)); }while(0)
+#define GPIOF_REG_RESET()               do{ (RCC->AHB1RSTR |= (1 << 5)); (RCC->AHB1RSTR &= ~(1 << 5)); }while(0)
+#define GPIOG_REG_RESET()               do{ (RCC->AHB1RSTR |= (1 << 6)); (RCC->AHB1RSTR &= ~(1 << 6)); }while(0)
+#define GPIOH_REG_RESET()               do{ (RCC->AHB1RSTR |= (1 << 7)); (RCC->AHB1RSTR &= ~(1 << 7)); }while(0)
+#define GPIOI_REG_RESET()               do{ (RCC->AHB1RSTR |= (1 << 8)); (RCC->AHB1RSTR &= ~(1 << 8)); }while(0)
 
 
 
+
+/*
+ * Some generic macros
+ */
+
+#define ENABLE						1
+#define DISABLE						0
+#define GPIO_PIN_SET				ENABLE
+#define GPIO_PIN_RESET				DISABLE
 
 
 

@@ -1,14 +1,7 @@
-00:52:10 **** Incremental Build of configuration Debug for project stm32f4xx_driver ****
+10:18:33 **** Incremental Build of configuration Debug for project stm32f4xx_driver ****
 make -j7 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/Users/zarintasmin/Mahadi/MCU1/my_workspace/stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-In file included from ../Src/main.c:19:
-/Users/zarintasmin/Mahadi/MCU1/my_workspace/stm32f4xx_driver/Driver/Inc/stm32f407xx.h:288: warning: "SYSCFG_PCLK_EN" redefined
-  288 | #define SYSCFG_PCLK_EN()                        ( RCC->APB2ENR &= ~(1 << 14) )
-      | 
-/Users/zarintasmin/Mahadi/MCU1/my_workspace/stm32f4xx_driver/Driver/Inc/stm32f407xx.h:235: note: this is the location of the previous definition
-  235 | #define SYSCFG_PCLK_EN()                        ( RCC->APB2ENR |= (1 << 14) )
-      | 
-arm-none-eabi-gcc -o "stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/zarintasmin/Mahadi/MCU1/my_workspace/stm32f4xx_driver/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc "../Driver/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/Users/zarintasmin/Mahadi/GitHub/STM32F407xx_driver_development/my_workspace/stm32f4xx_driver/Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f407xx_gpio_driver.d" -MT"Driver/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Driver/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "stm32f4xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/zarintasmin/Mahadi/GitHub/STM32F407xx_driver_development/my_workspace/stm32f4xx_driver/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32f4xx_driver.elf
  
 arm-none-eabi-size  stm32f4xx_driver.elf 
@@ -20,5 +13,5 @@ Finished building: default.size.stdout
 Finished building: stm32f4xx_driver.list
  
 
-00:52:16 Build Finished. 0 errors, 1 warnings. (took 5s.356ms)
+10:18:35 Build Finished. 0 errors, 0 warnings. (took 1s.756ms)
 

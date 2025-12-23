@@ -2,7 +2,7 @@
  * stm32f407xx_gpio_driver.h
  *
  *  Created on: 22 Dec 2025
- *      Author: zarintasmin
+ *      Author: Sayad Hassan
  */
 
 #ifndef INC_STM32F407XX_GPIO_DRIVER_H_
@@ -24,7 +24,7 @@ typedef struct
 	uint8_t GPIO_PinOPType;
 	uint8_t GPIO_PinAltFunMode;
 
-}GPIO_PinConfig_t;
+} GPIO_PinConfig_t;
 
 
 /*
@@ -38,7 +38,7 @@ typedef struct
 	GPIO_RegDef_t *pGPIOx;       		/*!< This holds the base address of the GPIO port to which the pin belongs >*/
 	GPIO_PinConfig_t GPIO_PinConfig;   /*!< This holds GPIO pin configuration settings >*/
 
-}GPIO_Handle_t;
+} GPIO_Handle_t;
 
 
 /*
@@ -104,14 +104,9 @@ typedef struct
 #define GPIO_PIN_PD			2
 
 
-/*
- * Some generic macros
- */
 
-#define ENABLE				1
-#define DISABLE				0
-#define SET					ENABLE
-#define RESET				DISABLE
+
+
 
 
 
