@@ -3,6 +3,7 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="volatile"/>
 		<item value="_EN"/>
 		<item value="DCKCFGR"/>
 		<item value="|= ("/>
@@ -14,6 +15,7 @@
 		<item value="APB1_PHERIPH_BASEADDR"/>
 	</list>
 	<list key="replacehistory">
+		<item value="_vo"/>
 		<item value="_DI"/>
 		<item value="&amp;= ~("/>
 		<item value="DI"/>
