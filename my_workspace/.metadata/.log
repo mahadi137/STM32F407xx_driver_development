@@ -411,3 +411,34 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/zarin
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-12-25 19:42:48.100
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2025-12-26 09:24:50.287 -----------------------------------------------
+eclipse.buildId=Version 2.0.0
+java.version=21.0.8
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_FI
+Framework arguments:  -keyring /Users/zarintasmin/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/zarintasmin/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-12-26 09:30:12.056
+!MESSAGE Log4j2 initialized with config file /Users/zarintasmin/Mahadi/GitHub/STM32F407xx_driver_development/my_workspace/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-12-26 09:30:21.684
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.ui 2 0 2025-12-26 09:40:40.706
+!MESSAGE The 'org.eclipse.cdt.ui.InclusionProposalComputer' proposal computer from the 'org.eclipse.cdt.ui' plug-in did not complete normally. The extension violated the API contract of the 'computeContextInformation()' operation.
+
+!ENTRY org.eclipse.cdt.ui 2 0 2025-12-26 09:41:30.258
+!MESSAGE The 'org.eclipse.cdt.ui.InclusionProposalComputer' proposal computer from the 'org.eclipse.cdt.ui' plug-in did not complete normally. The extension violated the API contract of the 'computeContextInformation()' operation.
+
+!ENTRY org.eclipse.cdt.ui 2 0 2025-12-26 09:41:34.065
+!MESSAGE The 'org.eclipse.cdt.ui.InclusionProposalComputer' proposal computer from the 'org.eclipse.cdt.ui' plug-in did not complete normally. The extension violated the API contract of the 'computeContextInformation()' operation.
+
+!ENTRY org.eclipse.cdt.ui 2 0 2025-12-26 09:49:19.603
+!MESSAGE The 'org.eclipse.cdt.ui.InclusionProposalComputer' proposal computer from the 'org.eclipse.cdt.ui' plug-in did not complete normally. The extension violated the API contract of the 'computeContextInformation()' operation.
+
+!ENTRY org.eclipse.cdt.ui 2 0 2025-12-26 10:16:46.854
+!MESSAGE The 'org.eclipse.cdt.ui.InclusionProposalComputer' proposal computer from the 'org.eclipse.cdt.ui' plug-in did not complete normally. The extension violated the API contract of the 'computeContextInformation()' operation.
+
+!ENTRY org.eclipse.cdt.ui 2 0 2025-12-26 10:17:15.357
+!MESSAGE The 'org.eclipse.cdt.ui.InclusionProposalComputer' proposal computer from the 'org.eclipse.cdt.ui' plug-in did not complete normally. The extension violated the API contract of the 'computeContextInformation()' operation.

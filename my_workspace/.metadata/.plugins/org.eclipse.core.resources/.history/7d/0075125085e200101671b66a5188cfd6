@@ -74,7 +74,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 	uint32_t temp = 0;
 
 	// Enable GPIO peripheral clock
-	GPIO_PeriClockControl(pGPIOHandle->pGPIOxReg, ENABLE);
+	GPIO_PeriClockControl();
 
 
 

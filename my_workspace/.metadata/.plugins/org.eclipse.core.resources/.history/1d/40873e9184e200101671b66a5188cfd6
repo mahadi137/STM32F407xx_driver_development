@@ -73,11 +73,6 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 {
 	uint32_t temp = 0;
 
-	// Enable GPIO peripheral clock
-	GPIO_PeriClockControl(pGPIOHandle->pGPIOxReg, ENABLE);
-
-
-
 	/* 1. Configure GPIO pin mode (non-interrupt modes only) */
 	if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG)
 	{
@@ -163,73 +158,37 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOxReg)
 }
 
 
-
-
-/*********************************************************************
- * @fn      		  - GPIO_ReadFromInputPin
- *
- * @brief             - Reads the value from a specific GPIO input pin.
- *
- * @param[pGPIOxReg] - Base address of the GPIO port.
- * @param[PinNumber] - Pin number (0–15) to read.
- *
- * @return           - 0 if pin is LOW, 1 if pin is HIGH.
- *
- * @note             - PinNumber must be within 0–15.
- *********************************************************************/
-
 uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOxReg, uint8_t PinNumber)
 {
 	uint8_t value;
-	value = (uint8_t)((pGPIOxReg->IDR >> PinNumber) & 0x1);
+	value = (uint8_t) pGPIOxReg->IDR >> PinNumber & 0x1;
 	return value;
 }
 
 
 
 
-/*********************************************************************
- * @fn      		  - GPIO_ReadFromInputPort
- *
- * @brief             - Reads the values of all pins of a GPIO port.
- *
- * @param[pGPIOxReg]  - Base address of the GPIO port.
- *
- * @return            - 16-bit value representing all pins (bit 0 = pin0, bit15 = pin15).
- *********************************************************************/
+
 
 uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOxReg)
 {
 	uint16_t value;
-	value = (uint16_t)pGPIOxReg->IDR;
+	value = (uint16_t) pGPIOxReg->IDR;
 	return value;
 }
 
 
 
 
-/*********************************************************************
- * @fn      		  - GPIO_WriteToOutputPin
- *
- * @brief             Writes a value to a specific GPIO output pin.
- *
- * @param[in] pGPIOxReg   Base address of the GPIO port.
- * @param[in] PinNumber   Pin number (0–15) to write to.
- * @param[in] Value       GPIO_PIN_SET to set HIGH, GPIO_PIN_RESET to set LOW.
- *
- * @return               None
- *
- * @note                 PinNumber must be within 0–15.
- *********************************************************************/
 
 void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOxReg, uint8_t PinNumber, uint8_t Value)
 {
 	if (Value == GPIO_PIN_SET)
 	{
 		pGPIOxReg->ODR |= (1 << PinNumber);
-	}
-	else
+	} else
 	{
+		//write 0, GPIO_PIN_RESET
 		pGPIOxReg->ODR &= ~(1 << PinNumber);
 	}
 }
@@ -237,16 +196,6 @@ void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOxReg, uint8_t PinNumber, uint8_t 
 
 
 
-/*********************************************************************
- * @fn      		  - GPIO_WriteToOutputPort
- *
- * @brief             - Writes a 16-bit value to all pins of a GPIO port.
- *
- * @param[pGPIOxReg]  - Base address of the GPIO port.
- * @param[Value]      - 16-bit value representing pin states (bit 0 = pin0, bit15 = pin15)
- *
- * @return            - None
- *********************************************************************/
 
 void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOxReg, uint16_t Value)
 {
@@ -255,25 +204,11 @@ void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOxReg, uint16_t Value)
 
 
 
-
-
-/*********************************************************************
- * @fn      		 - GPIO_ToggleOutputPin
- *
- * @brief            - Toggles the output state of a specific GPIO pin.
- *
- * @param[pGPIOxReg] - Base address of the GPIO port.
- * @param[PinNumber] - Pin number (0–15) to toggle.
- *
- * @return           -  None
- *
- * @note             - PinNumber must be within 0–15.
- *********************************************************************/
-
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOxReg, uint8_t PinNumber)
 {
-	pGPIOxReg->ODR ^= (1 << PinNumber); // corrected to XOR for toggle
+	pGPIOxReg->ODR = (1 << PinNumber);
 }
+
 
 
 

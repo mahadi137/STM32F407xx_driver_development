@@ -16,7 +16,7 @@ int main(void)
 
 	GpioLed.pGPIOxReg = GPIOD;
 	GpioLed.GPIOPinConfig.GPIO_PinMode = GPIO_MODE_OUT;
-	GpioLed.GPIOPinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
+	GpioLed.GPIOPinConfig.GPIO_PinNumber = 12;
 	GpioLed.GPIOPinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
 	GpioLed.GPIOPinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
 
@@ -24,7 +24,7 @@ int main(void)
 
 	while(1)
 	{
-		GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
+		GPIO_ToggleOutputPin(GpioLed.pGPIOxReg, GpioLed.GPIOPinConfig.GPIO_PinNumber);
 	}
 
 
