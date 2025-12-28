@@ -1,0 +1,45 @@
+/*
+ * stm32f407xx_spi_driver.h
+ *
+ *  Created on: 28 Dec 2025
+ *      Author: sayad hassan
+ */
+
+#ifndef INC_STM32F407XX_SPI_DRIVER_H_
+#define INC_STM32F407XX_SPI_DRIVER_H_
+
+#include "stm32f407xx.h"
+
+
+/*
+ * This is a SPI pin configuration structure for user application
+ */
+
+typedef struct
+{
+	uint8_t SPI_Device_mode;
+	uint8_t SPI_Bus_config;			/* @SPI_PIN_MODES */
+	uint8_t SPI_DFF;			/* @SPI_PIN_SPEED */
+	uint8_t SPI_CPHA;	/* @SPI_PULLUP/DOWN */
+	uint8_t SPI_CPOL;			/* @SPI_OUTPUT_TYPE */
+	uint8_t SPI_SSM;
+	uint8_t SPI_Speed;
+
+} SPI_PinConfig_t;
+
+
+/*
+ * This is Handle structure for SPI pin.
+ *
+ * With this handler user will use GPIO port and pin
+ */
+
+typedef struct
+{
+	SPI_RegDef_t *pSPIx;			/* This holds the base address of the SPI port to which the pin belongs */
+	SPI_PinConfig_t SPIPinConfig;		/* This holds GPIO pin configuration settings */
+
+} SPI_Handle_t;
+
+
+#endif /* INC_STM32F407XX_SPI_DRIVER_H_ */

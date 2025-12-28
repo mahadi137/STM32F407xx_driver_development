@@ -367,36 +367,10 @@ typedef struct
 
 
 
-/*
- * Macros to reset SPIx peripherals
- */
-
-#define SPI1_REG_RESET()  do{ RCC->APB2RSTR |=  (1 << 12);  RCC->APB2RSTR &= ~(1 << 12);  }while(0)
-#define SPI2_REG_RESET()  do{ RCC->APB1RSTR |=  (1 << 14);  RCC->APB1RSTR &= ~(1 << 14);  }while(0)
-#define SPI3_REG_RESET()  do{ RCC->APB1RSTR |=  (1 << 15);  RCC->APB1RSTR &= ~(1 << 15);  }while(0)
-
-
-/*
- * SPI_SR register map bit position definitions
- */
-
-#define SPI_SR_RXNE						0
-#define SPI_SR_TXE				 		1
-#define SPI_SR_CHSIDE				 	2
-#define SPI_SR_UDR					 	3
-#define SPI_SR_CRCERR				 	4
-#define SPI_SR_MODF					 	5
-#define SPI_SR_OVR					 	6
-#define SPI_SR_BSY					 	7
-#define SPI_SR_FRE					 	8
-
-
-
 
 // include all driver header
 
 #include "stm32f407xx_gpio_driver.h"
-#include "stm32f407xx_spi_driver.h"
 
 
 #endif /* INC_STM32F407XX_H_ */

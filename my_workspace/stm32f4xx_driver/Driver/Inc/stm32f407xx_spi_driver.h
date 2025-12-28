@@ -1,0 +1,187 @@
+/*
+ * stm32f407xx_spi_driver.h
+ *
+ *  Created on: 28 Dec 2025
+ *      Author: sayad hassan
+ */
+
+#ifndef INC_STM32F407XX_SPI_DRIVER_H_
+#define INC_STM32F407XX_SPI_DRIVER_H_
+
+#include "stm32f407xx.h"
+
+
+/*
+ * This is a SPI pin configuration structure for user application
+ */
+
+typedef struct
+{
+	uint8_t DeviceMode;
+	uint8_t BusConfig;
+	uint8_t DFF;
+	uint8_t CPHA;
+	uint8_t CPOL;
+	uint8_t SSM;
+	uint8_t BR;
+
+} SPI_PinConfig_t;
+
+
+/*
+ * This is Handle structure for SPI pin.
+ *
+ * With this handler user will use GPIO port and pin
+ */
+
+typedef struct
+{
+	SPI_RegDef_t *pSPIx;			/* This holds the base address of the SPI port to which the pin belongs */
+	SPI_PinConfig_t SPIPinConfig;		/* This holds GPIO pin configuration settings */
+
+} SPI_Handle_t;
+
+
+
+/********************** Macros **********************/
+
+/*
+ * SPI register map positions
+ */
+
+#define SPI_CR1_CPHA        0   /* Clock phase */
+#define SPI_CR1_CPOL        1   /* Clock polarity */
+#define SPI_CR1_MSTR        2   /* Master selection */
+
+#define SPI_CR1_BR          3   /* BR[2:0] spans bits 3..5 */
+
+#define SPI_CR1_SPE         6   /* SPI enable */
+#define SPI_CR1_LSBFIRST    7   /* Frame format */
+#define SPI_CR1_SSI         8   /* Internal slave select */
+#define SPI_CR1_SSM         9   /* Software slave management */
+#define SPI_CR1_RXONLY      10  /* Receive-only mode */
+#define SPI_CR1_DFF         11  /* Data frame format */
+#define SPI_CR1_CRCNEXT     12  /* CRC transfer next */
+#define SPI_CR1_CRCEN       13  /* Hardware CRC enable */
+#define SPI_CR1_BIDIOE      14  /* Output enable in bidi mode */
+#define SPI_CR1_BIDIMODE    15  /* Bidirectional mode enable */
+
+
+/*
+ * SPI communication divice modes
+ *
+ */
+
+#define SPI_DEVICE_MODE_MASTER		0
+#define SPI_DEVICE_MODE_SLAVE		1
+
+
+/*
+ * SPI communication divice modes
+ *
+ */
+
+#define SPI_DEVICE_BUS_MODE_FD					0		/* FULL DUPLEX */
+#define SPI_DEVICE_BUS_MODE_HD					1		/* HALF DUPLEX */
+#define SPI_DEVICE_BUS_MODE_SIMPLEX_TXONLY		2		/* transmit-only mode */
+#define SPI_DEVICE_BUS_MODE_SIMPLEX_RXONLY		3		/* receive-only mode */
+
+
+/*
+ * SPI Clock phase
+ *
+ */
+
+#define SPI_CPOL_HIGH				0
+#define SPI_CPOL_LOW				1
+
+
+/*
+ * SPI Clock POLARITY
+ *
+ */
+
+#define SPI_CPHA_HIGH				0
+#define SPI_CPHA_LOW				1
+
+
+/*
+ * SPI communication Data frame format
+ *
+ */
+
+#define SPI_DATA_FORMAT_8_BIT				0
+#define SPI_DATA_FORMAT_16_BIT				1
+
+
+
+/*
+ * SPI Baud rate control
+ *
+ */
+
+#define SPI_BR_DIV2        0   /* 000 */
+#define SPI_BR_DIV4        1   /* 001 */
+#define SPI_BR_DIV8        2   /* 010 */
+#define SPI_BR_DIV16       3   /* 011 */
+#define SPI_BR_DIV32       4   /* 100 */
+#define SPI_BR_DIV64       5   /* 101 */
+#define SPI_BR_DIV128      6   /* 110 */
+#define SPI_BR_DIV256      7   /* 111 */
+
+
+/*
+ * SPI Software slave management
+ *
+ */
+
+#define SPI_SSM_EN				0
+#define SPI_SSM_DI				1
+
+
+/*
+ *SPI status flag definition
+ */
+
+#define SPI_TXE_FLAG			(1 << SPI_SR_TXE)
+
+
+
+/******************************************************************************************
+ *								APIs supported by this driver
+ *		 For more information about the APIs check the function definitions
+ ******************************************************************************************/
+
+/*
+ * Peripheral Clock setup
+ */
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
+
+/*
+ * Init and De-init
+ */
+void SPI_Init(SPI_Handle_t *pSPIHandle);
+void SPI_DeInit(SPI_RegDef_t *pSPIx);
+
+uint8_t SPI_SendData(SPI_RegDef_t *pSPIx, uint32_t *pTxBuffer, uint8_t Len);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif /* INC_STM32F407XX_SPI_DRIVER_H_ */

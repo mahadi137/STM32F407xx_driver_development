@@ -3,18 +3,32 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="GPIO_"/>
+		<item value="ENABLE"/>
+		<item value="  \&#x0A;                             "/>
+		<item value="  \&#x0A;                              "/>
+		<item value="1U"/>
+		<item value="1 &lt;&lt;"/>
+		<item value="rcc_"/>
+		<item value="PERI_BASEADDR"/>
+		<item value=" */"/>
+		<item value="/*"/>
 		<item value="volatile"/>
 		<item value="_EN"/>
 		<item value="DCKCFGR"/>
 		<item value="|= ("/>
 		<item value="EN"/>
-		<item value="enable"/>
-		<item value="spi6"/>
-		<item value="SYSCFG"/>
-		<item value="RCC_"/>
-		<item value="APB1_PHERIPH_BASEADDR"/>
 	</list>
 	<list key="replacehistory">
+		<item value="SPI_"/>
+		<item value="1"/>
+		<item value="  "/>
+		<item value=" "/>
+		<item value="ENABLE"/>
+		<item value="ENABLE &lt;&lt;"/>
+		<item value="_PERI_BASEADDR"/>
+		<item value=" &gt;*/"/>
+		<item value="/*!&lt;"/>
 		<item value="_vo"/>
 		<item value="_DI"/>
 		<item value="&amp;= ~("/>
